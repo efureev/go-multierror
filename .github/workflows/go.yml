@@ -36,8 +36,9 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install
       - run: yarn build
-      - uses: paambaati/codeclimate-action@v3
+      - uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: yarn coverage
+          debug: true
