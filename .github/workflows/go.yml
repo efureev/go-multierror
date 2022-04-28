@@ -26,15 +26,15 @@ jobs:
 
       - name: Install Code Climate reporter
         run: |
-          export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
           sudo curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           sudo chmod +x ./cc-test-reporter
+          sudo ./cc-test-reporter before-build
 
       - name: Upload coverage information
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         run: |
-          sudo ./cc-test-reporter after-build -r $CC_TEST_REPORTER_ID
+          sudo ./cc-test-reporter after-build -t lcov -r $CC_TEST_REPORTER_ID
 
   coverage:
     needs: [ test ]
