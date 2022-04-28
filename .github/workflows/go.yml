@@ -36,20 +36,3 @@ jobs:
 #        run: |
 #          sudo ./cc-test-reporter upload-coverage -r $CC_TEST_REPORTER_ID
 #          sudo ./cc-test-reporter after-build --exit-code 0
-
-  coverage:
-    needs: [ test ]
-    name: coverage
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: '16'
-      - run: npm install -g yarn
-      - uses: paambaati/codeclimate-action@v3.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: yarn coverage
-          debug: true
