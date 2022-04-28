@@ -4,7 +4,6 @@
 [![codecov](https://codecov.io/gh/efureev/go-multierror/branch/main/graph/badge.svg?token=3tWq5TZnhK)](https://codecov.io/gh/efureev/go-multierror)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c681d43d44fdde8ed41c/maintainability)](https://codeclimate.com/github/efureev/go-multierror/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c681d43d44fdde8ed41c/test_coverage)](https://codeclimate.com/github/efureev/go-multierror/test_coverage)
-[![Go package](https://github.com/efureev/go-multierror/actions/workflows/go.yml/badge.svg)](https://github.com/efureev/go-multierror/actions/workflows/go.yml)
 # Multi error
 
 `multierror` is a package for Go that provides a mechanism for representing a collection of error as a single error.
