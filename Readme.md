@@ -1,24 +1,9 @@
-# Migrator
-Binary file to help you manage migrations into your DB.
+# Multi error
 
-# Features
-- Create migration with custom name: `./migrator create -n file_name`
-- Migrate up your migrations: `./migrator up`
-- Migrate down your migrations: `./migrator down`
-- Refresh all migrations: `./migrator fresh`
-- Clean all you DB: `./migrator wipe`
-- Version: `./migrator wipe`
+`multierror` is a package for Go that provides a mechanism for representing a collection of error as a single error.
 
-## Build
-```bash
-./build.sh
-```
+This allows a function in Go to return an error that might actually be a list of errors.
 
+## Installation
 
-## Examples
-```
-$ ./migrator create -n file_name
-$ ./migrator create --name='create users table'
-$ ./migrator up
-$ MGTR_DATABASE_MIGRATIONPATH=./custom ./migrator up
-```
+Install using `go get github.com/efureev/go-multierror`

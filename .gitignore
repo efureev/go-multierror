@@ -3,3 +3,10 @@ config.toml
 migrator
 /build
 .DS_Store
+
+coverage.txt
+coverage.out
+
+*.out
+.idea
+
