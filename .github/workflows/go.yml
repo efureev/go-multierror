@@ -28,13 +28,14 @@ jobs:
         run: |
           sudo curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           sudo chmod +x ./cc-test-reporter
-          sudo ./cc-test-reporter before-build
+          sudo ./cc-test-reporter format-coverage -t gocov
 
       - name: Upload coverage information
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         run: |
-          sudo ./cc-test-reporter after-build -t lcov -r $CC_TEST_REPORTER_ID
+          sudo ./cc-test-reporter upload-coverage -r $CC_TEST_REPORTER_ID
+          sudo ./cc-test-reporter after-build --exit-code 0
 
   coverage:
     needs: [ test ]
