@@ -12,7 +12,7 @@ type Collection struct {
 	Formatter FormatterFn
 }
 
-func (c *Collection) Error() string {
+func (c Collection) Error() string {
 	fn := c.Formatter
 	if fn == nil {
 		fn = DefaultFormatFunc
